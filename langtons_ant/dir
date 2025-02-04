@@ -1,7 +1,6 @@
 # Standard
 import enum
 
-
 class Dir(enum.Enum):
     """Direction of movement."""
 
