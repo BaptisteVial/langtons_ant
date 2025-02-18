@@ -1,5 +1,8 @@
 # Standard
+import logging
 import enum
+
+logger = logging.getLogger("LangtonsAnt")
 
 class Dir(enum.Enum):
     """Direction of movement."""
@@ -22,9 +25,13 @@ class Dir(enum.Enum):
     def turn_right(self) -> "Dir":
         """Returns the new direction when turning right."""
         directions = [Dir.UP, Dir.RIGHT, Dir.DOWN, Dir.LEFT]
-        return directions[(directions.index(self) + 1) % 4]
+        new_direction = directions[(directions.index(self) + 1) % 4]
+        logger.debug(f"Turning right: {self} -> {new_direction}")
+        return new_direction
 
     def turn_left(self) -> "Dir":
         """Returns the new direction when turning left."""
         directions = [Dir.UP, Dir.RIGHT, Dir.DOWN, Dir.LEFT]
-        return directions[(directions.index(self) - 1) % 4]
+        new_direction = directions[(directions.index(self) - 1) % 4]
+        logger.debug(f"Turning left: {self} -> {new_direction}")
+        return new_direction

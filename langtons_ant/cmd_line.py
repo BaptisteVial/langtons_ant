@@ -20,7 +20,7 @@ def read_args() -> argparse.Namespace:
     parser.add_argument("--output", "-o", type=Path, help="Path to output file.")
     parser.add_argument("-v", action="count", default=0, help="Enable verbose logging.")
     parser.add_argument("--gui_mode", "-G", type = int , default=0, help="Enable GUI mode if a non-nil value is entered.")
-    parser.add_argument("--tile-size", type=int, default=50, help="Size of each square tile in pixels (GUI mode).")
+    parser.add_argument("--tile-size", type=int, default=20, help="Size of each square tile in pixels (GUI mode).")
     parser.add_argument("--ant-color", type=str, default="red", help="Color of the ant in GUI mode.")
     parser.add_argument("--fps", type=int, default=10, help="Frames per second in GUI mode.")
 
